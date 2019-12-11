@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "302430855131",
+    "firebase_url": "https://delicious-70526.firebaseio.com",
+    "project_id": "delicious-70526",
+    "storage_bucket": "delicious-70526.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302430855131:android:7195aa2cada88bf74811fe",
+        "android_client_info": {
+          "package_name": "com.example.delicious"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302430855131-pj2ukf02jf2d5f69jj62udi1d1q7jh0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.delicious",
+            "certificate_hash": "09beafc2888fcf2219fd2b040dfd0ab32b0c7769"
+          }
+        },
+        {
+          "client_id": "302430855131-9k7dbdfihg5nfbjkp58r8o3fpfg0jejk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmHWUFqZfMqJQEH7kFv7rYReE9FUgvItM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302430855131-9k7dbdfihg5nfbjkp58r8o3fpfg0jejk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
