@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.bumptech.glide.Glide;
+
 public class Recipe extends AppCompatActivity {
 
     TextView foodDescription,RecipeName, RecipeIngriedents,RecipeTime;
@@ -40,7 +42,10 @@ public class Recipe extends AppCompatActivity {
             RecipeName.setText(mBundle.getString("RecipeName"));
             RecipeIngriedents.setText(mBundle.getString("Ingriedents"));
             RecipeTime.setText(mBundle.getString("Time"));  // get time item from firebae
-            foodImage.setImageResource(mBundle.getInt("Image"));
+           // foodImage.setImageResource(mBundle.getInt("Image"));
+            Glide.with(this)
+                    .load(mBundle.getString("Image"))
+                    .into(foodImage);
         }
 
 

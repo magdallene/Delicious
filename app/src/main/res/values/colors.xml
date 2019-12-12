@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#F31C51</color>
+    <color name="colorPrimary">#4DFC0A44</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colorButton">#E07EC1</color>
+    <color name="colorToolbar">#EB0F47</color>
+    <color name="colorButton">#5EE7C9D8</color>
     <color name="black">#770A0A</color>
     <color name="white">#FFFFFF</color>
     <color name="textview_recipe">#EEE9E9</color>
-    <color name="dark_toolbar">#14072C</color>
+    <color name="dark_toolbar">#280F50</color>
     <color name="colorrecyler">#20E94574</color>
 </resources>
