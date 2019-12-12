@@ -5,8 +5,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,7 +36,7 @@ public class AddingActivity extends AppCompatActivity {
     ImageView recipeImage;
     Uri uri;
     EditText txt_name,txt_description, txt_ingriedents,txt_time;
-    String imageUrl;
+    String imageUrl,category;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,40 @@ public class AddingActivity extends AppCompatActivity {
         txt_time = (EditText)findViewById(R.id.text_time);
 
 
+        String [] categoryOptions = {"Breakfast","Dinner","Sweet","Drinks"};
+        ArrayAdapter<String> categoryAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,categoryOptions);
+        final Spinner categorySpinner = (Spinner)findViewById(R.id.spinner);
+        categorySpinner.setAdapter(categoryAdapter);
+
+        categorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(AddingActivity.this, (id+1) + " Choosed", Toast.LENGTH_SHORT).show();
+                switch (position){
+                    case 0:
+                        //breakfast
+                        category = "Breakfast";
+                        break;
+                    case 1:
+                        //dinner
+                        category = "Dinner";
+                        break;
+                    case 2:
+                        //sweet
+                        category = "Sweet";
+                        break;
+                    case 3:
+                        //drinks
+                        category = "Drinks";
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     }
 
@@ -89,7 +126,7 @@ public class AddingActivity extends AppCompatActivity {
                 while(!uriTask.isComplete());
                 Uri urlImage = uriTask.getResult();
                 imageUrl = urlImage.toString();
-                uploadRecipe();
+                uploadRecipe(category);
                 progressDialog.dismiss();
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -105,7 +142,7 @@ public class AddingActivity extends AppCompatActivity {
     }
 
     // method to upload content to firebase
-    public void uploadRecipe(){
+    public void uploadRecipe(String recipeCategory){
         FoodData foodData = new FoodData(
                 txt_name.getText().toString(),
                 txt_description.getText().toString(),
@@ -116,8 +153,8 @@ public class AddingActivity extends AppCompatActivity {
         String myCurrentDateTime = DateFormat.getDateTimeInstance()
                 .format(Calendar.getInstance().getTime());
 
-        FirebaseDatabase.getInstance().getReference("Recipe")
-                .child(myCurrentDateTime).setValue(foodData).addOnCompleteListener(new OnCompleteListener<Void>() {
+        FirebaseDatabase.getInstance().getReference("Recipe").child(recipeCategory
+                ).child(myCurrentDateTime).setValue(foodData).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 

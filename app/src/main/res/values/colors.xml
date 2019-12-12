@@ -8,4 +8,5 @@
     <color name="white">#FFFFFF</color>
     <color name="textview_recipe">#EEE9E9</color>
     <color name="dark_toolbar">#14072C</color>
+    <color name="colorrecyler">#20E94574</color>
 </resources>

@@ -1,10 +1,12 @@
 package com.example.delicious;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +30,9 @@ public class BreakfastActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     MyAdapter myAdapter;
     EditText txt_Search;
+    String category;
+    TextView categoryTitle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,8 @@ public class BreakfastActivity extends AppCompatActivity {
         setContentView(R.layout.activity_breakfast);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        categoryTitle = (TextView)findViewById(R.id.categoryTitle);
 
         mRecyclerView = (RecyclerView)findViewById(R.id.rv);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1);
@@ -50,8 +57,11 @@ public class BreakfastActivity extends AppCompatActivity {
         myAdapter  = new MyAdapter(this,myFoodList);
         mRecyclerView.setAdapter(myAdapter);
 
+        Intent intent = getIntent();
+        category = intent.getStringExtra("CATEGORY");
+        categoryTitle.setText(category);
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Recipe");
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Recipe").child(category);
 
         progressDialog.show();
         ValueEventListener eventListener = databaseReference.addValueEventListener(new ValueEventListener() {

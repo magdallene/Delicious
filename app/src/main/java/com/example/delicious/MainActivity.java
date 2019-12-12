@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    String categoryList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,12 +21,52 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Button breakfastButton = findViewById(R.id.firstctgr);
+        Button dinnerButton = findViewById(R.id.secondctgr);
+        Button sweetButton = findViewById(R.id.thirdctgr);
+        Button drinksButton = findViewById(R.id.fourthctgr);
+
+
+        //  categoryList = "Dinner";
+
         breakfastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,BreakfastActivity.class));
+                categoryList = "Breakfast";
+                Intent intent = new Intent(MainActivity.this,BreakfastActivity.class);
+                intent.putExtra("CATEGORY",categoryList);
+                startActivity(intent);
             }
         });
+
+        dinnerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                categoryList = "Dinner";
+                Intent intent = new Intent(MainActivity.this,BreakfastActivity.class);
+                intent.putExtra("CATEGORY",categoryList);
+                startActivity(intent);
+            }
+        });
+        sweetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                categoryList = "Sweet";
+                Intent intent = new Intent(MainActivity.this,BreakfastActivity.class);
+                intent.putExtra("CATEGORY",categoryList);
+                startActivity(intent);
+            }
+        });
+        drinksButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                categoryList = "Drinks";
+                Intent intent = new Intent(MainActivity.this,BreakfastActivity.class);
+                intent.putExtra("CATEGORY",categoryList);
+                startActivity(intent);
+            }
+        });
+
+
 
         Button add_recipe = findViewById(R.id.addbtn);
         add_recipe.setOnClickListener(new View.OnClickListener() {

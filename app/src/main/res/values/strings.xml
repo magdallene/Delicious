@@ -16,4 +16,5 @@
     <string name="title">RECIPE TITLE</string>
     <string name="time">Total time: </string>
     <string name="search">SEARCH</string>
+    <string name="categoryChoose">Category</string>
 </resources>

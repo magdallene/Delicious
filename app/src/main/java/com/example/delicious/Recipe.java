@@ -40,7 +40,7 @@ public class Recipe extends AppCompatActivity {
             RecipeName.setText(mBundle.getString("RecipeName"));
             RecipeIngriedents.setText(mBundle.getString("Ingriedents"));
             RecipeTime.setText(mBundle.getString("Time"));  // get time item from firebae
-            // foodImage.setImageResource(mBundle.getInt("Image"));
+            foodImage.setImageResource(mBundle.getInt("Image"));
         }
 
 

@@ -22,17 +22,17 @@
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/categoryTitle"
             android:layout_width="wrap_content"
             android:layout_height="41dp"
-            android:layout_marginLeft="100dp"
             android:gravity="center"
-            android:text="BREAKFASTS"
+            android:layout_gravity="clip_horizontal|center"
+            android:text="Category"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             android:visibility="visible"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             app:autoSizeMaxTextSize="70px"
             app:autoSizeMinTextSize="30px"
             app:fontFamily="sans-serif-medium"
@@ -56,7 +56,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/categoryTitle"
             app:layout_constraintVertical_bias="0.062" />
 
     </LinearLayout>
