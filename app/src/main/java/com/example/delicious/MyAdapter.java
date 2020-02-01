@@ -94,4 +94,6 @@ class FoodViewHolder extends RecyclerView.ViewHolder{
         mIngriedents = itemView.findViewById(R.id.tvIngriedents);
         mCardView = itemView.findViewById(R.id.myCardView);
     }
+
+
 }

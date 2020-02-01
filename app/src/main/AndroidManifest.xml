@@ -20,7 +20,7 @@
             android:label="@string/title_activity_recipe"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BreakfastActivity"
+            android:name=".CategoryActivity"
             android:label="@string/title_activity_breakfast"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

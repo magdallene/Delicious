@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Delicious</string>
     <string name="action_settings">Settings</string>
-    <string name="first_activity_title">MY RECIPES</string>
+    <string name="first_activity_title">RECIPES</string>
     <string name="firstctgr">Breakfast</string>
     <string name="secondctgr">Dinner</string>
     <string name="thirdctgr">Sweet</string>
     <string name="fourthctgr">Drinks</string>
     <string name="title_activity_breakfast">BreakfastActivity</string>
     <string name="title_activity_recipe">Recipe</string>
-    <string name="add_recipe">ADD RECIPE></string>
+    <string name="add_recipe">ADD RECIPE</string>
     <string name="title_activity_adding">AddingActivity</string>
     <string name="setimg">SET IMAGE</string>
     <string name="ingredients">INGREDIENTS</string>

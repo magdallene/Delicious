@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BreakfastActivity extends AppCompatActivity {
+public class CategoryActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     List<FoodData> myFoodList;
     FoodData mFoodData;
@@ -40,6 +40,7 @@ public class BreakfastActivity extends AppCompatActivity {
         setContentView(R.layout.activity_breakfast);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(null);
 
         categoryTitle = (TextView)findViewById(R.id.categoryTitle);
 

@@ -1,6 +1,7 @@
 package com.example.delicious;
 
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,7 +14,6 @@ public class Recipe extends AppCompatActivity {
 
     TextView foodDescription,RecipeName, RecipeIngriedents,RecipeTime;
     ImageView foodImage;
-   // String key="";
     String imageUrl="";
 
 
@@ -32,16 +32,19 @@ public class Recipe extends AppCompatActivity {
         RecipeTime = (TextView)findViewById(R.id.txtTime);
         foodImage = (ImageView)findViewById(R.id.ivImage2);
 
+        RecipeIngriedents.setMovementMethod(new ScrollingMovementMethod());
+        foodDescription.setMovementMethod(new ScrollingMovementMethod());
+
+
         Bundle mBundle = getIntent().getExtras();
 
         if(mBundle!=null){
 
             foodDescription.setText(mBundle.getString("Description"));
-            //key = mBundle.getString("keyValue");
             imageUrl = mBundle.getString("Image");
             RecipeName.setText(mBundle.getString("RecipeName"));
             RecipeIngriedents.setText(mBundle.getString("Ingriedents"));
-            RecipeTime.setText(mBundle.getString("Time"));  // get time item from firebae
+            RecipeTime.setText(mBundle.getString("Time"));
            // foodImage.setImageResource(mBundle.getInt("Image"));
             Glide.with(this)
                     .load(mBundle.getString("Image"))

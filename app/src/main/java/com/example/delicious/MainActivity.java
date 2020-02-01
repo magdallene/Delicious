@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 categoryList = "Breakfast";
-                Intent intent = new Intent(MainActivity.this,BreakfastActivity.class);
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
                 intent.putExtra("CATEGORY",categoryList);
                 startActivity(intent);
             }
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 categoryList = "Dinner";
-                Intent intent = new Intent(MainActivity.this,BreakfastActivity.class);
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
                 intent.putExtra("CATEGORY",categoryList);
                 startActivity(intent);
             }
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 categoryList = "Sweet";
-                Intent intent = new Intent(MainActivity.this,BreakfastActivity.class);
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
                 intent.putExtra("CATEGORY",categoryList);
                 startActivity(intent);
             }
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 categoryList = "Drinks";
-                Intent intent = new Intent(MainActivity.this,BreakfastActivity.class);
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
                 intent.putExtra("CATEGORY",categoryList);
                 startActivity(intent);
             }
